@@ -1,63 +1,76 @@
  body {
    font-family: 'Arial', sans-serif;
-   text-align: center;
    background-color: #fff;
    margin: 0;
    padding: 0;
+   text-align: center;
  }
 
  h1 {
-   color: #e91e63;
-   margin-top: 40px;
+   font-family: 'Fredoka One', cursive;
+   /* simile al font nell’immagine */
+   color: #ff4081;
+   /* rosa come nell’immagine */
+   margin-top: 50px;
  }
 
- p {
-   max-width: 800px;
-   margin: 0 auto 40px;
-   font-size: 18px;
+ p.intro {
+   max-width: 700px;
+   margin: 20px auto 50px;
+   font-size: 16px;
    color: #333;
  }
 
- .container {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
+ .team-container {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
    gap: 20px;
-   padding: 0 20px 40px;
+   width: 90%;
+   max-width: 1200px;
+   margin: 0 auto 50px;
  }
 
- .card {
-   display: flex;
-   width: 350px;
-   background-color: black;
-   color: white;
-   overflow: hidden;
+ .team-card {
+   background-color: #000;
+   color: #fff;
    text-align: left;
-   border-radius: 5px;
+   padding: 20px;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   gap: 15px;
+   transition: transform 0.3s, box-shadow 0.3s;
  }
 
- .card img {
-   width: 50%;
+ .team-card img {
+   width: 80px;
+   height: 80px;
    object-fit: cover;
+   border-radius: 50%;
  }
 
- .card-info {
-   padding: 10px;
+ .team-info {
+   display: flex;
+   flex-direction: column;
  }
 
- .card-info h3 {
-   font-weight: bold;
-   margin: 0 0 5px;
+ .team-info h2 {
+   margin: 0;
+   font-family: 'Fredoka One', cursive;
+   font-size: 18px;
  }
 
- .card-info p {
+ .team-info p {
    margin: 5px 0;
    font-size: 14px;
-   color: #fff;
  }
 
- .card-info a {
+ .team-info a {
    color: #00bfff;
-   font-size: 14px;
    text-decoration: none;
+ }
+
+ .team-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
  }
