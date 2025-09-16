@@ -1,3 +1,4 @@
+// Array dei membri del team
 const teamMembers = [
   {
     name: "Marco Bianchi",
@@ -9,7 +10,7 @@ const teamMembers = [
     name: "Laura Rossi",
     role: "Front-end Developer",
     email: "laurarossi@team.com",
-    img: "img/female1.png"
+    img: "img/female2.png"
   },
   {
     name: "Giorgio Verdi",
@@ -36,3 +37,26 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+// Prendo il contenitore dal DOM
+const container = document.getElementById('container');
+
+// Ciclo su ogni membro e creo la card
+teamMembers.forEach(member => {
+  // Creo il contenitore della card
+  const card = document.createElement('div');
+  card.className = 'card';
+
+  // Riempio la card con le info del membro
+  card.innerHTML = `
+    <img src="${member.img}" alt="${member.name}">
+    <div class="card-info">
+      <h3>${member.name.toUpperCase()}</h3>
+      <p>${member.role}</p>
+      <a href="mailto:${member.email}">${member.email}</a>
+    </div>
+  `;
+
+  // Aggiungo la card al container
+  container.appendChild(card);
+});
